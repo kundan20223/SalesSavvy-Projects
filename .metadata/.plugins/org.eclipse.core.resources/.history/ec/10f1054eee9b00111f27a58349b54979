@@ -1,0 +1,11 @@
+package com.example.app.services;
+
+import com.example.app.entities.kodusers;
+
+public class KodUsersServiceImpl implements KodUsersService{
+   
+	 @Override
+	 public kodusers register(kodusers kodUsers) {
+		  return null;
+	 }
+}

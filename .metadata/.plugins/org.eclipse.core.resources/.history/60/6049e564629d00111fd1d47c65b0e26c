@@ -1,0 +1,18 @@
+package com.kodnest.app.userserviceimplementations;
+
+import com.kodnest.app.entities.User;
+import com.kodnest.app.userservices.UserServiceContract;
+
+public class UserService implements UserServiceContract {
+
+	@Override
+	public User registerUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	 
+}
+     
+

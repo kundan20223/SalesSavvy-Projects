@@ -1,0 +1,53 @@
+package com.example.app.controllers;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.example.app.entities.Role;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.app.entities.kodusers;
+import com.example.app.services.KodUsersService;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin
+public class KodUserController {
+	
+	KodUsersService kodUsersService;
+
+	public KodUserController(KodUsersService kodUsersService) {
+		super();
+		this.kodUsersService = kodUsersService;
+	}
+	
+	@PostMapping("/signup")
+	public Map<String,String> usersSignUp(@RequestBody Map<String, String> request)
+	{
+		Map<String, String> response = new HashMap<>();
+		String username=request.get("username");
+		String password = request.get("password");
+		int age = Integer.parseInt(request.get("age"));
+		int marks = Integer.parseInt(request.get("marks"));
+		@SuppressWarnings("deprecation")
+		Role role = Role.valueOf(request.get("role"));
+		
+		kodusers kodUsers = new kodusers(username, password, age, marks, role);
+		kodusers registeredUser = kodUsersService.register(kodUsers);
+		if(registeredUser!=null) {
+			response.put("message", "Registered Successfully");
+			
+		} else {
+			response.put("message", "Registration Failed");
+		}
+		return response;
+	}
+	
+	
+	
+
+}
