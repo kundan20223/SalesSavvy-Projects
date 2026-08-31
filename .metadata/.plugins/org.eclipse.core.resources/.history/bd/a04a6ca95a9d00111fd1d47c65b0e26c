@@ -1,5 +1,0 @@
-package com.kodnest.app.userrepositories;
-
-public interface UserRepository {
-
-}
