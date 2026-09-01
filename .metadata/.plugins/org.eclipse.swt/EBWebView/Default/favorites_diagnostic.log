@@ -135,3 +135,22 @@
 2026-08-27 13:53:38.063: [INFO] BookmarkModelLoaded, ids_reassigned: 0
 2026-08-27 13:53:38.063: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-08-27 13:53:38.063: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-31 13:14:02.288: [INFO] CurrentProfilePath: C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-31 13:14:02.288: [INFO] Profiles total count: 1
+2026-08-31 13:14:02.289: [INFO] Profile: name=Profile 1 path=C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-20T11:54:30.293Z
+2026-08-31 13:14:02.289: [INFO] LastUsedProfileDir: C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-31 13:14:02.289: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-20T11:54:30.293Z
+2026-08-31 13:14:02.289: [INFO] OnDoneLoading sync enabled: 0
+2026-08-31 13:14:02.289: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-31 13:14:02.289: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-31 13:14:02.289: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-31 13:14:17.165: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-31 13:20:35.415: [INFO] CurrentProfilePath: C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-31 13:20:35.415: [INFO] Profiles total count: 1
+2026-08-31 13:20:35.416: [INFO] Profile: name=Profile 1 path=C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-20T11:54:30.293Z
+2026-08-31 13:20:35.416: [INFO] LastUsedProfileDir: C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-31 13:20:35.416: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\kundankumar\Documents\workspace-spring3\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-20T11:54:30.293Z
+2026-08-31 13:20:35.416: [INFO] OnDoneLoading sync enabled: 0
+2026-08-31 13:20:35.416: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-31 13:20:35.416: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-31 13:20:35.416: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

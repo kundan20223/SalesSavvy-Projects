@@ -96,4 +96,38 @@ public class AuthService implements AuthServiceContract{
         JWTToken jwtToken = new JWTToken(user, token, LocalDateTime.now().plusHours(1));
         jwtTokenRepository.save(jwtToken);
     }
+    
+    public boolean validateToken(String token) {
+        try {
+            System.err.println("VALIDATING TOKEN...");
+
+            // Parse and validate the token
+            Jwts.parserBuilder()
+                .setSigningKey(SIGNING_KEY)
+                .build()
+                .parseClaimsJws(token);
+
+            // Check if the token exists in the database and is not expired
+            Optional<JWTToken> jwtToken = jwtTokenRepository.findByToken(token);
+            if (jwtToken.isPresent()) {
+                System.err.println("Token Expiry: " + jwtToken.get().getExpiresAt());
+                System.err.println("Current Time: " + LocalDateTime.now());
+                return jwtToken.get().getExpiresAt().isAfter(LocalDateTime.now());
+            }
+
+            return false;
+        } catch (Exception e) {
+            System.err.println("Token validation failed: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public String extractUsername(String token) {
+        return Jwts.parserBuilder()
+            .setSigningKey(SIGNING_KEY)
+            .build()
+            .parseClaimsJws(token)
+            .getBody()
+            .getSubject();
+    }
 }
