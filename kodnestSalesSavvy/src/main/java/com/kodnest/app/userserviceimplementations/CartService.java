@@ -1,0 +1,56 @@
+package com.kodnest.app.userserviceimplementations;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.kodnest.app.entities.Cart_Items;
+import com.kodnest.app.entities.Product;
+import com.kodnest.app.entities.User;
+import com.kodnest.app.userrepositories.CartRepository;
+import com.kodnest.app.userrepositories.ProductRepository;
+import com.kodnest.app.userservices.CartServiceContract;
+
+
+@Service
+public class CartService implements CartServiceContract{
+
+	
+	 ProductRepository productRepository;
+	 CartRepository cartRepository;
+	 
+	 
+	 
+	 
+	 
+	 
+	public CartService(ProductRepository productRepository, CartRepository cartRepository) {
+		super();
+		this.productRepository = productRepository;
+		this.cartRepository = cartRepository;
+	}
+
+
+
+
+
+
+	public void addToCart(User user, int productId, int quantity) {
+	    
+
+	    Product product = productRepository.findById(productId)
+	            .orElseThrow(() -> new IllegalArgumentException("Product not found with ID: " + productId));
+
+	    // Fetch cart item for this userId and productId
+	    Optional<Cart_Items> existingItem = cartRepository.findByUserAndProduct(user.getUserId(), productId);
+
+	    if (existingItem.isPresent()) {
+	        Cart_Items cartItem = existingItem.get();
+	        cartItem.setQuantity(cartItem.getQuantity() + quantity);
+	        cartRepository.save(cartItem);
+	    } else {
+	        Cart_Items newItem = new Cart_Items(user, product, quantity);
+	        cartRepository.save(newItem);
+	    }
+	}
+}

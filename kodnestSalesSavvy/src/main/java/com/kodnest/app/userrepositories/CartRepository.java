@@ -1,0 +1,18 @@
+package com.kodnest.app.userrepositories;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.kodnest.app.entities.Cart_Items;
+
+
+@Repository
+public interface CartRepository extends JpaRepository<Cart_Items, Integer>{
+	@Query("SELECT c FROM Cart_Items c WHERE c.user.userId = :userId AND c.product.productId = :productId")
+	Optional<Cart_Items> findByUserAndProduct(int userId, int productId);
+	
+
+}
